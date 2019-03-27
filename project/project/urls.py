@@ -20,6 +20,8 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from webapp import views
 
 urlpatterns = [
+    path('',views.input),
     path('admin/', admin.site.urls),
     path('flights/',views.flightList.as_view()),
+    path('<str:flight_no>',views.get_flight),
 ]
